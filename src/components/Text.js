@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text } from 'react-native'
 import { LanguageContext } from '../languages/LanguageContext';
-function getString(text) {
+function getString(data, text) {
     try {
         return eval(`data.translations.${text}`);
     }

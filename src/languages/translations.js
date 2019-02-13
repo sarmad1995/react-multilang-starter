@@ -4,7 +4,7 @@ export default {
             okay: 'Okay'
         },
         homeScreen: {
-            hello: 'login'
+            hello: 'hello'
         }
     },
     spanish: {
