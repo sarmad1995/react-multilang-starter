@@ -1,13 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Text } from 'react-native'
 import { LanguageContext } from '../languages/LanguageContext';
 function getString(data, text) {
     try {
-        return eval(`data.translations.${text}`);
+        const translatedText = eval(`data.translations.${text}`);
+        if (translatedText) {
+            return translatedText;
+        }
+        console.warn(`No translations found for ${text}`);
+        return text;
     }
     catch (e) {
-        console.warn(e);
-        return '';
+        console.warn(`No translations found for ${text}`);
+        return text;
     }
 }
 export default function CustomText({ text, ...rest }) {
